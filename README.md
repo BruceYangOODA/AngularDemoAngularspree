@@ -97,4 +97,15 @@ this.translateService.use(event.target.value)
 ----I18N----
 
 
+[Web [掘竅] 為什麼要使用 rel="noreferrer noopener"，談 target="_blank" 的安全性風險](https://pjchender.blogspot.com/2020/05/relnoreferrer-targetblank.html)      
+
+這時候你會發現你在 A 站的網頁默默轉址到了 Google 的頁面。      
+這種做法主要是利用一般人只會注意新開的視窗（B 站），而忽略了原有的視窗（A 站），      
+但若不進一步處理，新開的視窗是有機會可以修改到原視窗內所瀏覽的網址的。     
+因此，若你使用的 target="_blank" 的話，會建議你要加上 rel="noreferrer noopener"，      
+以確保使用者當前瀏覽的頁面，不會因為開新視窗後被另開的這個網站給影響。     
+
+
+
+
 
