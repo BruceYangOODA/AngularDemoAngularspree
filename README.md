@@ -60,7 +60,7 @@ deps: [HttpClient]
   "./node_modules/bootstrap/dist/js/bootstrap.js" 
 ]   
 "assets": [     
-    "src/manifest.json"     
+    "src/manifest.json"  讓index.html認識這個檔案     
 ]       
 
 
