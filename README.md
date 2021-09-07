@@ -24,7 +24,12 @@ $ npm install @ngx-translate/http-loader
 @style.scss   
 @import '~ngx-toastr/toastr-bs4-alert';     
 
-@app.module.ts      
+
+@module.ts    
+import { ToastrModule } from 'ngx-toastr';  
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';   
+import { NgxJsonLdModule } from 'ngx-json-ld';      
+import { NgProgressModule } from 'ngx-progressbar';     
 import { TranslateModule } from '@ngx-translate/core';      
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';     
 
@@ -32,8 +37,9 @@ export function HttpLoaderFactory(http: HttpClient) {
 return new TranslateHttpLoader(http, '../../assets/i18n/', '.json')     
 }      
 
-imports: [      
-TranslateHttpLoader,    
+imports: [    
+    ToastrModule.forRoot(),    
+    BrowserAnimationsModule,        
 TranslateModule.forRoot({       
 defaultLanguage: 'cn',      
 loader: {       
@@ -42,17 +48,6 @@ useFactory: HttpLoaderFactory,
 deps: [HttpClient]      
 }       
 }) 
-]     
-
-@module.ts    
-import { ToastrModule } from 'ngx-toastr';  
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';   
-import { NgxJsonLdModule } from 'ngx-json-ld';      
-import { NgProgressModule } from 'ngx-progressbar';     
-  
-imports: [    
-    ToastrModule.forRoot(),    
-    BrowserAnimationsModule,        
   ],    
 
 @angular.json  
