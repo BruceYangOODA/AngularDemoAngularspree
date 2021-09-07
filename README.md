@@ -19,7 +19,9 @@ $ npm install ngx-progressbar --save
 [API ngx-progressbar](https://medium.com/letsboot/lets-add-a-progress-bar-to-angular-4-apps-using-ngx-progressbar-45a2a1089d4e)      
 
 $ npm install @ngx-translate/core       
-$ npm install @ngx-translate/http-loader        
+$ npm install @ngx-translate/http-loader       
+
+$ npm install ngx-bootstrap --save       
 
 @style.scss   
 @import '~ngx-toastr/toastr-bs4-alert';     
@@ -31,7 +33,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxJsonLdModule } from 'ngx-json-ld';      
 import { NgProgressModule } from 'ngx-progressbar';     
 import { TranslateModule } from '@ngx-translate/core';      
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';     
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';    
+import { ModalModule } from 'ngx-bootstrap/modal';  
 
 export function HttpLoaderFactory(http: HttpClient) {       
 return new TranslateHttpLoader(http, '../../assets/i18n/', '.json')     
@@ -39,6 +42,7 @@ return new TranslateHttpLoader(http, '../../assets/i18n/', '.json')
 
 imports: [    
     ToastrModule.forRoot(),    
+    ModalModule.forRoot(),      
     BrowserAnimationsModule,        
 TranslateModule.forRoot({       
 defaultLanguage: 'cn',      
