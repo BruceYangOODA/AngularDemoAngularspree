@@ -21,10 +21,24 @@ $ npm install ngx-progressbar --save
 $ npm install @ngx-translate/core       
 $ npm install @ngx-translate/http-loader       
 
-$ npm install ngx-bootstrap --save       
+$ ng add ngx-bootstrap   
+// npm install ngx-bootstrap --save      
+// npm install ngx-bootstrap bootstrap --save      
+     
 
 @style.scss   
 @import '~ngx-toastr/toastr-bs4-alert';     
+
+@index.html     
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2">
+
+@app.module.ts      
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';     
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';      
+imports: [      
+    BrowserAnimationsModule,        
+    BsDropdownModule.forRoot()      
+  ]     
 
 
 @module.ts    
@@ -54,7 +68,8 @@ deps: [HttpClient]
 }) 
   ],    
 
-@angular.json  
+@angular.json 
+bulid: {               
 "styles": [   
     "./node_modules/bootstrap/dist/css/bootstrap.css",   
     "./node_modules/ngx-toastr/toastr.css"    
