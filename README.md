@@ -49,6 +49,7 @@ import { NgProgressModule } from 'ngx-progressbar';
 import { TranslateModule } from '@ngx-translate/core';      
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';    
 import { ModalModule } from 'ngx-bootstrap/modal';  
+import { HttpClientModule ,HttpClient } from '@angular/common/http';       
 
 export function HttpLoaderFactory(http: HttpClient) {       
 return new TranslateHttpLoader(http, '../../assets/i18n/', '.json')     
@@ -58,6 +59,7 @@ imports: [
     ToastrModule.forRoot(),    
     ModalModule.forRoot(),      
     BrowserAnimationsModule,        
+    HttpClientModule,         
 TranslateModule.forRoot({       
 defaultLanguage: 'cn',      
 loader: {       
