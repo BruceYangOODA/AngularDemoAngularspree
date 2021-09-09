@@ -126,7 +126,11 @@ this.translateService.use(event.target.value)
 因此，若你使用的 target="_blank" 的話，會建議你要加上 rel="noreferrer noopener"，      
 以確保使用者當前瀏覽的頁面，不會因為開新視窗後被另開的這個網站給影響。     
 
+------         
+FontAweomse         
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">              
 
-
-
-
+------         
+bootstrap      
+  <!-- include bootstrap stylesheets -->          
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">    
