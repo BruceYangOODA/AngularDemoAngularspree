@@ -134,3 +134,46 @@ FontAweomse
 bootstrap      
   <!-- include bootstrap stylesheets -->          
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">    
+
+
+
+### ngu-carousel         
+
+[API ngu-carousel](https://www.npmjs.com/package/@ngu/carousel)          
+
+$ npm i --save @ngu/carousel@latest          
+$ npm install hammerjs --save      
+
+module.ts      
+import { NguCarouselModule } from '@ngu/carousel';          
+
+@NgModule({         
+  imports: [NguCarouselModule]          
+})        
+
+main.ts        
+import 'hammerjs';       
+
+component.ts        
+import { NguCarouselConfig } from '@ngu/carousel';          
+          
+  public carouselTileConfig: NguCarouselConfig = {          
+    grid: { xs: 1, sm: 1, md: 1, lg: 1, all: 0 },      
+    slide: 1,       
+    speed: 500,          
+    point: {        
+      visible: true      
+    },         
+    touch: true,         
+    velocity: 0,         
+    loop: true,          
+    interval: { timing: 5000 },         
+    animation: 'lazy',        
+    custom: 'banner'          
+  };      
+          
+
+
+
+
+
