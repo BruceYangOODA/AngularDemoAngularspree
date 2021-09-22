@@ -1,0 +1,30 @@
+<div class="input-group searchBar">
+    <input 
+        type="text" 
+        class="for-control"
+        placeholder="Search"
+        aria-label="Search"
+        aria-describedby="search-button"
+        aria-type="search"
+        placeholder="{{ searchPlaceholder }}"
+        #box
+        [(ngModel)]="asyncSelected"
+        [typeaheadAsync]="true"
+        [typeahead]="dataSource"
+        (typeaheadLoading)="changeTypeaheadLoading($event)"
+        (typeaheadOnselect)="typeaheadOnSelect($event)"
+        typeheadOptionsLimit=7
+        typeaheadOptionField="name"
+        placeholder="{{ 'searchPlaceholder' | translate }}"
+        style=" width: 300px;"
+        >
+        <div class="input-group-append">
+            <button 
+                class="btn btn-outline-light searchBar-btn"
+                type="button"
+                (click)="doSearch(box.value)"
+                >
+                <span class="fa fa-search searchBar-btn-icon"></span>
+            </button>
+        </div>        
+</div>

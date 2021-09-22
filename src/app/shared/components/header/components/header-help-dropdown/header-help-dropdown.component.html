@@ -1,0 +1,45 @@
+<div>
+    <div 
+        class="btn helpbtn"
+        [ngClass]="[isOpen? 'openhelp': '']"
+        (mouseenter)="dropdown.show()"
+        (mouseleave)="dropdown.hide()"        
+    >
+    <div style="width: 50px; padding-top: 10px;"><strong>{{ '24/7 help' | translate }}</strong></div>
+    <i class="fa pl-3 fa-chevron-down"></i>
+    </div>
+    <div 
+        class="dpmenu"
+        dropdown
+        #dropdown="bs-dropdown"
+        [autoClose]="false"
+        (isOpenChange)="onOpenChange($event)"
+        (mouseenter)="dropdown.show()"
+        (mouseleave)="dropdown.hide()"
+        (click)="dropdown.hide()"
+        >
+        <div 
+            class="dropdown-menu text-center"
+            id="dropdown-triggers-manual"
+            *dropdownMenu
+            role="menu"
+            aria-labelledby="button-triggers-manual"
+            >
+            <ul>
+                <li role="menuitem">
+                    <h6>{{ 'Get help from out experts 24/7' | translate }}</h6>
+                    <h2 class="text-danger">{{ contactno }}</h2>                    
+                </li>
+                <li class="divider dropdown-divider"></li>
+                <li></li>
+                <li role="menuitem">
+                    <a 
+                        class="dropdown-item"
+                        [routerLink]="['/']">
+                        {{ 'Contact Us' | translate }}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

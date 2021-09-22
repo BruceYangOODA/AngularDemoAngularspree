@@ -1,9 +1,13 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
+import { DEFAULT_CONFIG } from '../config/default/default';
 
 export const environment = {
-  production: false
+  production: false,
+  apiEndpoint: 'http://localhost:3000/',
+  appName: DEFAULT_CONFIG.appName,
+  config: DEFAULT_CONFIG
 };
 
 /*

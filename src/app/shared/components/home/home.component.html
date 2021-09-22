@@ -1,0 +1,11 @@
+<body>
+<app-lp-banner></app-lp-banner>
+<br>
+<br>
+<div class="container my-5" *ngIf="(products$ | async); let productList">
+    <app-lp-product-list      
+         [products]="productList"  
+    ></app-lp-product-list>
+    {{ productList | json}}
+</div>
+</body>

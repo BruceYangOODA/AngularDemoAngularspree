@@ -1,0 +1,97 @@
+<!-- Broser BLOCk-->
+<div *ngIf="!isMobile">
+    <!-- LOGOUT -->
+    <div *ngIf="!isAuthenticated">
+        <div 
+            class="btn helpbtn"
+            [ngClass]="[isOpen? 'openhelp': '']"
+            (mouseenter)="dropdown.show()"
+            (mouseleave)="dropdown.hide()">
+            <strong>{{ 'Login & SingUp' | translate }}</strong>
+            <i class="fa pl-3 fa-chevron-down"></i>   
+        </div>
+        <div 
+            class="dpmenu"
+            dropdown
+            #dropdown="bs-dropdown"
+            [autoClose]="false"
+            (mouseenter)="dropdown.show()"
+            (mouseleave)="dropdown.hide()"
+            (click)="dropdown.hide()"
+            (isOpenChange)="onOpenChange($event)"
+            >
+            <div 
+                class="dropdown-menu text-center"
+                id="dropdown-triggers-manual"
+                *dropdownMenu
+                [ngClass]="[isScrolled ? '' : 'notscrolled']"
+                role="menu"
+                aria-labelledby="button-triggers-manual"
+                >
+                <ul>
+                    <li role="menuitem">
+                        <a 
+                            class="dropdown-item"
+                            (click)="login()">{{ 'Login' | translate }}</a>
+                    </li>
+                    <li class="divider dropdown-divider"></li>
+                    <li role="menuitem">
+                        <a 
+                            class="dropdown-item"
+                            [routerLink]="['/auth/signup']"
+                            >{{ 'Sign Up' | translate }}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- LOGIN -->
+    <div *ngIf="isAuthenticated">
+        <div 
+            class="btn helpbtn"
+            [ngClass]="[isOpen? 'openhelp': '']"
+            (mouseenter)="dropdown.show()"
+            (mouseleave)="dropdown.hide()">
+            <i class="fa fa-user mr-2" aria-hidden="true"></i>
+            <strong class="text-capitalize">{{name}}</strong>
+            <i class="fa pl-3 fa-chevron-down"></i>
+        </div>
+        <div 
+            class="dpmenu"
+            dropdown
+            #dropdown="bs-dropdown"
+            [autoClose]="false"
+            (mouseenter)="dropdown.show()"
+            (mouseleave)="dropdown.hide()"
+            (click)="dropdown.hide()"
+            (isOpenChange)="onOpenChange($event)"
+            >
+            <div
+                class="dropdown-menu text-center"
+                id="dropdown-triggers-manual"
+                *dropdownMenu
+                [ngClass]="{arrowalignement: isAuthenticated, notscrolled: !isScrolled}"
+                role="menu"
+                aria-labelledby="button-triggers-manual"
+                >
+                <ul>
+                    <li class="divider dropdown-divider"></li>
+                    <li role="menuitem">
+                        <a
+                            class="dropdown-item"
+                            routerLink="/user/orders"
+                            >{{ 'My Orders' | translate }}</a>
+                    </li>
+                    <li class="divider dropdown-divider"></li>
+                    <li role="menuitem">
+                        <a class="dropdown-item" (click)="logout()">{{ 'Logout' | translate }}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Mobile BLOCk-->
+<div *ngIf="isMobile"></div>

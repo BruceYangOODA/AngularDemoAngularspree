@@ -1,0 +1,21 @@
+<!-- Broser -->
+<div 
+    *ngIf="!isMobile"
+    class="header-cart btn"
+    [routerLink]="['/checkout/cart']"
+    (click)="getCurrentOrder()"
+    >
+    <i class="fa fa-shopping-cart" aria-hidden="true"></i> 
+    <div style="width: 50px;">{{ 'Cart' | translate}}</div>
+    <span class="badge badge-pill shadow-sm">{{ totalCartItems }}</span>
+</div>
+<!-- Mobile -->
+<div 
+    *ngIf="isMobile"
+    class="header-cart btn"
+    [routerLink]="['/checkout/cart']"
+    (click)="getCurrentOrder()"
+    >
+    <i class="fa fa-shopping-cart" aria-hidden="true"></i> {{ 'Cart' | translate}}
+    <span class="badge badge-pill shadow-sm">{{ totalCartItems }}</span>
+</div>

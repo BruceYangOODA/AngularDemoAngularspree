@@ -1,0 +1,11 @@
+@import '../../../../../../node_modules/bootstrap/scss/functions';
+
+$font-family-sans-serif: 'Catamaran', 'Lato', -apple-system, BlinkMacSystemFont,
+  'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
+  'Segoe UI Emoji', 'Segoe UI Symbol' !default;
+$font-family-monospace: 'Catamaran', 'Lato', SFMono-Regular, Menlo, Monaco,
+  Consolas, 'Liberation Mono', 'Courier New', monospace !default;
+$font-family-base: $font-family-sans-serif !default;
+
+// Variables should be override above
+@import '../core_variables';
